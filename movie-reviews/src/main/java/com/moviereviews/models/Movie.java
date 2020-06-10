@@ -1,26 +1,38 @@
 package com.moviereviews.models;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Document(collection = "movie")
 public class Movie {
 
 
 	@Id
-	private String id;
-
+	@ApiModelProperty(hidden = true) 
+	private Object id;
 	public String title;
-	public String getName() {
+	public String director;
+	public String year;
+	public String genre;
+	
+	
+	public String getId() {
+		return id.toString();
+	}
+
+	public void setId(ObjectId objectId) {
+		this.id = objectId;
+	}
+	public String getTitle() {
 		return title;
 	}
 
 
-	private String getId() {
-		return id;
-	}
 
-	public void setName(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 
@@ -35,12 +47,12 @@ public class Movie {
 	}
 
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
@@ -55,12 +67,9 @@ public class Movie {
 	}
 
 
-	public String director;
-	public int year;
-	public String genre;
 
-
-	public Movie(String title, String director, int year, String genre) {
+	public Movie(Object id,String title, String director, String year, String genre) {
+		this.id=id;
 		this.title = title;
 		this.director = director;
 		this.year = year;
@@ -70,7 +79,11 @@ public class Movie {
 	@Override
 	public String toString() 
 	{
-		return "Movie [id=" + id + ", title=" + title + ", director=" + director + ", year=" + year + ", genre=" + genre + "]";
+		return "Movie [id=" + getId() + ", title=" + title + ", director=" + director + ", year=" + year + ", genre=" + genre + "]";
 	}
+
+
+
+
 
 }
