@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.data.annotation.Id"/>
+<fullyQualifiedTypeName name="com.moviereviews.models.Review"/>
+<fullyQualifiedTypeName name="com.moviereviews.repositories.ReviewRepository"/>
+<fullyQualifiedTypeName name="com.moviereviews.repositories.MovieRepository"/>
+</qualifiedTypeNameHistroy>

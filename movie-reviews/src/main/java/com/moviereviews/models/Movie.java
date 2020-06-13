@@ -12,7 +12,7 @@ public class Movie {
 
 	@Id
 	@ApiModelProperty(hidden = true) 
-	private Object id;
+	private String id;
 	public String title;
 	public String director;
 	public String year;
@@ -23,8 +23,8 @@ public class Movie {
 		return id.toString();
 	}
 
-	public void setId(ObjectId objectId) {
-		this.id = objectId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -68,7 +68,7 @@ public class Movie {
 
 
 
-	public Movie(Object id,String title, String director, String year, String genre) {
+	public Movie(String id,String title, String director, String year, String genre) {
 		this.id=id;
 		this.title = title;
 		this.director = director;
